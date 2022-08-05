@@ -1,0 +1,6 @@
+# exclude hidden dirs .git etc.
+.*
+*.iml
+gradle
+gradlew*
+*.kts
