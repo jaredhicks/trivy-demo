@@ -7,7 +7,8 @@ on:
   pull_request:
 
 jobs:
-  build:
+  check:
+    name: Build and Test Code
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +26,8 @@ jobs:
         run: go test
 
   build-image:
-    name: Build Images
+    name: Bake and Validate Images
+    needs: check
     runs-on: ubuntu-latest
     steps:
       - name: Set up Docker Buildx
